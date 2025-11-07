@@ -1,112 +1,136 @@
 let allWords = [
 
-    'Love', 
+    "Love",
 
-    'Je t\'aime', 
+    "Je t'aime",
 
-    'Te amo', 
+    "Te amo",
 
-    'Amour', 
+    "Amour",
 
-    'Amore', 
+    "Amore",
 
-    'Ti amo', 
+    "Ti amo",
 
-    'Σ\'αγαπώ', 
+    "Σ'αγαπώ",
 
-    'Ich liebe dich', 
+    "Ich liebe dich",
 
-    'Te quiero', 
+    "Te quiero",
 
-    'Eu te amo', 
+    "Eu te amo",
 
-    'Saya cinta kamu', 
+    "Saya cinta kamu",
 
-    'Aishiteru', 
+    "Aishiteru",
 
-    'Wo ai ni', 
+    "Wo ai ni",
 
-    'Ani ohevet otcha', 
+    "Ani ohevet otcha",
 
-    'Main tumse pyar karta hoon', 
+    "Main tumse pyar karta hoon",
 
-    'Ngiyakuthanda', 
+    "Ngiyakuthanda",
 
-    'Ek het jou lief', 
+    "Ek het jou lief",
 
-    'Te iubesc', 
+    "Te iubesc",
 
-    'Volim te', 
+    "Volim te",
 
-    'Ti voglio bene', 
+    "Ti voglio bene",
 
-    'Jeg elsker deg', 
+    "Jeg elsker deg",
 
-    'Jeg elsker dig', 
+    "Jeg elsker dig",
 
-    'Jag älskar dig', 
+    "Jag älskar dig",
 
-    'Kocham cię', 
+    "Kocham cię",
 
-    'Seni seviyorum', 
+    "Seni seviyorum",
 
-    'Mahal kita', 
+    "Mahal kita",
 
-    'Amo-te', 
+    "Amo-te",
 
-    'Mi amas vin', 
+    "Mi amas vin",
 
-    'Ik hou van jou', 
+    "Ik hou van jou",
 
-    'Ani nenu ninnu premisthunnanu', 
+    "Ani nenu ninnu premisthunnanu",
 
-    'Mo nifẹ rẹ', 
+    "Mo nifẹ rẹ",
 
-    'Ndinokuda', 
+    "Ndinokuda",
 
-    'Nakupenda', 
+    "Nakupenda",
 
-    'Taim i’ ngra leat', 
+    "Taim i ngra leat",
 
-    'Obicham te', 
+    "Obicham te",
 
-    'Ya tebya lyublyu', 
+    "Ya tebya lyublyu",
 
-    'Ngo oiy ney', 
+    "Ngo oiy ney",
 
-    'Te sakam', 
+    "Te sakam",
 
-    'Ua ou te alofa ia te oe', 
+    "Ua ou te alofa ia te oe",
 
-    'Ke aloha nei au iā ʻoe', 
+    "Ke aloha nei au iā oe",
 
-    'Saya sayang awak', 
+    "Saya sayang awak",
 
-    'Phom rak khun', 
+    "Phom rak khun",
 
-    'Chit pa de', 
+    "Chit pa de",
 
-    'Kuv hlub koj', 
+    "Kuv hlub koj",
 
-    'Mi ta stimabo', 
+    "Mi ta stimabo",
 
-    'Is breá liom tú', 
+    "Is breá liom tú",
 
-    'Maite zaitut'
+    "Maite zaitut"
 
-]
+];
 
+document.addEventListener("DOMContentLoaded", () => {
 
-let animate ={
-    word: document.querySelector(".word")
-}
+    const wordContainer = document.querySelector(".word");
 
-animate.word.style.setProperty("--particles",allWords.length)
+    if (!wordContainer) {
 
-allWords.forEach((word, i)=>{
-    let span =document.createElement("span")
-    span.style.setProperty("--n", i+1)
-    span.innerText =word
-    animate.word.appendChild(span)
-})
+        console.warn("No se encontró ningún elemento con la clase .word. Añadí la comprobación para evitar errores.");
+
+        return;
+
+    }
+
+    // define variable for animation target
+
+    let animate = { word: wordContainer };
+
+    // set CSS property (string is fine)
+
+    animate.word.style.setProperty("--particles", String(allWords.length));
+
+    // clear any existing children (optional, safe for reruns)
+
+    animate.word.innerHTML = "";
+
+    allWords.forEach((word, i) => {
+
+        const span = document.createElement("span");
+
+        span.style.setProperty("--n", String(i + 1));
+
+        span.innerText = word;
+
+        animate.word.appendChild(span);
+
+    });
+
+});
  
