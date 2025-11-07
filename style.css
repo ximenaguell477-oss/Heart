@@ -23,7 +23,7 @@ body{
 .word span{
     position: absolute;
     font-size: 23px;
-    color: #0aa1fd;
+    color: #fd0a98;
     left: 0;
     animation: animate1 10s ease-in-out infinite alternate, animate2 20s linear infinite;
     animation-delay: calc(20s/var(--particles)*var(--n)*-1);

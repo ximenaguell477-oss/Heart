@@ -11,13 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const wordContainer = document.querySelector(".word");
 
-    if (!wordContainer) {
-
-        console.warn("No se encontró ningún elemento con la clase .word. Añadí la comprobación para evitar errores.");
-
-        return;
-
-    }
+   
 
     let animate = { word: wordContainer };
 
